@@ -10,8 +10,26 @@ export default function Home() {
   return (
     <div className="animate-fade-in">
       {/* Hero Section */}
-      <section className="min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
+      <section className="relative min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Image with Gradient Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/abir-photo.jpg.jpg"
+            alt=""
+            className="w-full h-full object-cover object-top opacity-20"
+          />
+          {/* Gradient overlays for depth */}
+          <div className="absolute inset-0 bg-gradient-to-b from-dark-900/80 via-dark-900/60 to-dark-900" />
+          <div className="absolute inset-0 bg-gradient-to-r from-dark-900/70 via-transparent to-dark-900/70" />
+          {/* Subtle blue-ash gradient accent */}
+          <div className="absolute inset-0 bg-gradient-to-br from-accent-blue/5 via-transparent to-accent-teal/5" />
+        </div>
+
+        {/* Decorative gradient orbs */}
+        <div className="absolute top-20 left-10 w-72 h-72 bg-accent-blue/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent-teal/10 rounded-full blur-3xl" />
+
+        <div className="relative z-10 max-w-6xl mx-auto text-center">
           <div className="mb-6">
             <span className="inline-block px-4 py-2 text-sm font-medium text-accent-teal bg-accent-teal/10 rounded-full border border-accent-teal/20">
               {personalInfo.title}
@@ -22,7 +40,7 @@ export default function Home() {
             {heroContent.headline}
           </h1>
 
-          <p className="text-lg sm:text-xl text-gray-400 max-w-3xl mx-auto mb-8">
+          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
             {heroContent.subheadline}
           </p>
 
@@ -36,12 +54,12 @@ export default function Home() {
           </div>
 
           {/* Proof Strip */}
-          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-gray-500">
+          <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-gray-400">
             {proofStrip.map((item, index) => (
               <div key={item} className="flex items-center gap-4">
                 <span className="text-sm font-medium">{item}</span>
                 {index < proofStrip.length - 1 && (
-                  <span className="hidden sm:inline text-dark-600">•</span>
+                  <span className="hidden sm:inline text-gray-600">•</span>
                 )}
               </div>
             ))}
@@ -50,19 +68,29 @@ export default function Home() {
       </section>
 
       {/* Metrics Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-dark-800/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-6">
-            {metrics.map((metric) => (
-              <div key={metric.label} className="card text-center">
-                <div className="text-3xl sm:text-4xl font-bold gradient-text mb-2">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-dark-800/50 via-dark-800 to-dark-800/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-accent-blue/5 via-transparent to-accent-teal/5" />
+
+        <div className="relative max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl font-bold text-gray-100 mb-2">By The Numbers</h2>
+            <p className="text-gray-400">Combined impact across technical and sales roles</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6">
+            {metrics.map((metric, index) => (
+              <div key={metric.label} className="card text-center group hover:shadow-xl hover:shadow-accent-teal/10">
+                <div className={`text-3xl sm:text-4xl font-bold mb-2 transition-colors ${
+                  index % 2 === 0 ? 'text-accent-teal' : 'text-accent-blue'
+                }`}>
                   {metric.value}
                 </div>
-                <div className="text-sm font-medium text-gray-300 mb-1">
+                <div className="text-sm font-medium text-gray-200 mb-1">
                   {metric.label}
                 </div>
                 {metric.description && (
-                  <div className="text-xs text-gray-500">
+                  <div className="text-xs text-gray-400">
                     {metric.description}
                   </div>
                 )}
@@ -73,8 +101,12 @@ export default function Home() {
       </section>
 
       {/* Featured Projects Preview */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative">
+        {/* Subtle gradient accent */}
+        <div className="absolute top-0 left-1/4 w-64 h-64 bg-accent-blue/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-accent-teal/5 rounded-full blur-3xl" />
+
+        <div className="max-w-6xl mx-auto relative">
           <div className="flex items-center justify-between mb-12">
             <h2 className="section-heading">Featured Projects</h2>
             <Link to="/projects" className="text-accent-teal hover:text-accent-blue transition-colors flex items-center gap-2">
@@ -89,11 +121,11 @@ export default function Home() {
                 href={project.liveUrl || project.repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="card group cursor-pointer"
+                className="card group cursor-pointer hover:shadow-xl hover:shadow-accent-teal/5"
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-semibold group-hover:text-accent-teal transition-colors">
+                    <h3 className="text-xl font-semibold text-gray-100 group-hover:text-accent-teal transition-colors">
                       {project.title}
                     </h3>
                     <p className="text-sm text-gray-400">{project.tagline}</p>
@@ -109,7 +141,7 @@ export default function Home() {
                   {project.techStack.slice(0, 4).map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs font-medium bg-dark-700 text-gray-300 rounded-full"
+                      className="px-3 py-1 text-xs font-medium bg-dark-700 text-gray-300 rounded-full border border-dark-600"
                     >
                       {tech}
                     </span>
@@ -122,12 +154,15 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-accent-teal/10 to-accent-blue/10">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent-teal/10 via-accent-blue/10 to-accent-teal/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-dark-900/50 to-transparent" />
+
+        <div className="relative max-w-6xl mx-auto text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6 text-gray-100">
             Let's Build Something Together
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mb-8">
+          <p className="text-gray-300 max-w-2xl mx-auto mb-8">
             Currently open to opportunities in AI QA, automation, and B2B sales roles.
             Feel free to reach out if you'd like to connect.
           </p>

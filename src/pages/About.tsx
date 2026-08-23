@@ -1,4 +1,5 @@
 import { GraduationCap, Award, Users, BookOpen } from 'lucide-react'
+import { useState, useEffect } from 'react'
 import { aboutContent, personalInfo } from '../data/content'
 
 const timeline = [
@@ -60,13 +61,29 @@ const awards = [
 ]
 
 export default function About() {
+  const [isDark, setIsDark] = useState(true)
+
+  useEffect(() => {
+    const checkDark = () => {
+      setIsDark(document.body.classList.contains('dark'))
+    }
+    checkDark()
+    const observer = new MutationObserver(checkDark)
+    observer.observe(document.body, { attributes: true, attributeFilter: ['class'] })
+    return () => observer.disconnect()
+  }, [])
+
   return (
-    <div className="animate-fade-in py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-6xl mx-auto">
+    <div className="animate-fade-in py-20 px-4 sm:px-6 lg:px-8 relative">
+      {/* Decorative gradients */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent-blue/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent-teal/5 rounded-full blur-3xl" />
+
+      <div className="max-w-6xl mx-auto relative">
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="section-heading">About Me</h1>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+          <p className={`text-lg max-w-2xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
             {aboutContent.positioning}
           </p>
         </div>
@@ -84,20 +101,20 @@ export default function About() {
               </div>
 
               <div className="card">
-                <h3 className="font-semibold mb-4">Quick Info</h3>
+                <h3 className={`font-semibold mb-4 ${isDark ? 'text-gray-100' : 'text-gray-900'}`}>Quick Info</h3>
                 <div className="space-y-3 text-sm">
                   <div>
-                    <span className="text-gray-500">Location</span>
-                    <p className="text-gray-300">{personalInfo.location}</p>
+                    <span className={isDark ? 'text-gray-500' : 'text-gray-500'}>Location</span>
+                    <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{personalInfo.location}</p>
                   </div>
                   <div>
-                    <span className="text-gray-500">Education</span>
-                    <p className="text-gray-300">{personalInfo.degree}</p>
-                    <p className="text-gray-400">{personalInfo.university} • {personalInfo.universityPeriod}</p>
+                    <span className={isDark ? 'text-gray-500' : 'text-gray-500'}>Education</span>
+                    <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>{personalInfo.degree}</p>
+                    <p className={isDark ? 'text-gray-400' : 'text-gray-500'}>{personalInfo.university} • {personalInfo.universityPeriod}</p>
                   </div>
                   <div>
-                    <span className="text-gray-500">Focus</span>
-                    <p className="text-gray-300">AI QA, Automation, Cybersecurity</p>
+                    <span className={isDark ? 'text-gray-500' : 'text-gray-500'}>Focus</span>
+                    <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>AI QA, Automation, Cybersecurity</p>
                   </div>
                 </div>
               </div>
@@ -111,7 +128,7 @@ export default function About() {
               <h2 className="subsection-heading">Background</h2>
               <div className="prose prose-invert max-w-none">
                 {aboutContent.longBio.split('\n\n').map((paragraph, index) => (
-                  <p key={index} className="text-gray-400 mb-4 leading-relaxed">
+                  <p key={index} className={`mb-4 leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                     {paragraph}
                   </p>
                 ))}
@@ -125,21 +142,21 @@ export default function About() {
                 {timeline.map((item, index) => (
                   <div key={index} className="flex gap-4">
                     <div className="flex flex-col items-center">
-                      <div className="w-10 h-10 rounded-full bg-dark-700 flex items-center justify-center">
+                      <div className={`w-10 h-10 rounded-full flex items-center justify-center ${isDark ? 'bg-dark-700' : 'bg-gray-100'}`}>
                         <item.icon size={20} className="text-accent-teal" />
                       </div>
                       {index < timeline.length - 1 && (
-                        <div className="w-0.5 h-full bg-dark-700 mt-2" />
+                        <div className={`w-0.5 h-full mt-2 ${isDark ? 'bg-dark-700' : 'bg-gray-200'}`} />
                       )}
                     </div>
                     <div className="flex-1 pb-6">
                       <div className="text-sm text-accent-teal font-medium mb-1">
                         {item.year}
                       </div>
-                      <h3 className="font-semibold text-gray-200 mb-1">
+                      <h3 className={`font-semibold mb-1 ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>
                         {item.title}
                       </h3>
-                      <p className="text-sm text-gray-400">
+                      <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                         {item.description}
                       </p>
                     </div>
@@ -154,9 +171,9 @@ export default function About() {
               <div className="grid sm:grid-cols-2 gap-4">
                 {extracurriculars.map((item, index) => (
                   <div key={index} className="card">
-                    <h3 className="font-medium text-gray-200">{item.role}</h3>
-                    <p className="text-sm text-gray-400">{item.organization}</p>
-                    <p className="text-xs text-gray-500 mt-1">{item.period}</p>
+                    <h3 className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>{item.role}</h3>
+                    <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{item.organization}</p>
+                    <p className={`text-xs mt-1 ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>{item.period}</p>
                   </div>
                 ))}
               </div>
@@ -170,8 +187,8 @@ export default function About() {
                   <div key={index} className="card flex items-center gap-3">
                     <Award className="text-accent-teal" size={24} />
                     <div>
-                      <h3 className="font-medium text-gray-200">{award.title}</h3>
-                      <p className="text-sm text-gray-400">{award.level}</p>
+                      <h3 className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>{award.title}</h3>
+                      <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{award.level}</p>
                     </div>
                   </div>
                 ))}

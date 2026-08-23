@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: 'Abir Islam Nill',
-  title: 'AI Quality Assurance & Automation Specialist',
-  tagline: 'With real B2B sales DNA',
+  title: 'AI Quality Assurance & B2B Sales Professional',
+  tagline: 'Technical precision meets real-world client acquisition',
   email: 'nillmw02@gmail.com',
   location: 'Dhaka, Bangladesh',
   university: 'BRAC University',

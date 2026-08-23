@@ -34,15 +34,25 @@ export default function Layout({ children }: LayoutProps) {
     setIsMenuOpen(false)
   }, [location])
 
+  useEffect(() => {
+    // Apply theme to body
+    if (isDark) {
+      document.body.classList.remove('light')
+      document.body.classList.add('dark')
+    } else {
+      document.body.classList.remove('dark')
+      document.body.classList.add('light')
+    }
+  }, [isDark])
+
   const toggleTheme = () => {
     setIsDark(!isDark)
-    document.documentElement.classList.toggle('dark')
   }
 
   return (
-    <div className="min-h-screen bg-dark-900">
+    <div className={`min-h-screen ${isDark ? 'bg-dark-900' : 'bg-gray-50'}`}>
       {/* Navigation */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-dark-900/95 backdrop-blur-sm border-b border-dark-700' : 'bg-transparent'}`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? (isDark ? 'bg-dark-900/95 backdrop-blur-sm border-b border-dark-700' : 'bg-white/95 backdrop-blur-sm border-b border-gray-200') : 'bg-transparent'}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
@@ -56,14 +66,14 @@ export default function Layout({ children }: LayoutProps) {
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`text-sm font-medium transition-colors hover:text-accent-teal ${location.pathname === link.path ? 'text-accent-teal' : 'text-gray-400'}`}
+                  className={`text-sm font-medium transition-colors hover:text-accent-teal ${location.pathname === link.path ? 'text-accent-teal' : (isDark ? 'text-gray-400' : 'text-gray-600')}`}
                 >
                   {link.label}
                 </Link>
               ))}
               <button
                 onClick={toggleTheme}
-                className="p-2 text-gray-400 hover:text-white transition-colors"
+                className={`p-2 transition-colors rounded-lg ${isDark ? 'text-gray-400 hover:text-white hover:bg-dark-800' : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'}`}
                 aria-label="Toggle theme"
               >
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
@@ -74,14 +84,14 @@ export default function Layout({ children }: LayoutProps) {
             <div className="md:hidden flex items-center gap-4">
               <button
                 onClick={toggleTheme}
-                className="p-2 text-gray-400 hover:text-white transition-colors"
+                className={`p-2 transition-colors ${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
                 aria-label="Toggle theme"
               >
                 {isDark ? <Sun size={20} /> : <Moon size={20} />}
               </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 text-gray-400 hover:text-white transition-colors"
+                className={`p-2 transition-colors ${isDark ? 'text-gray-400 hover:text-white' : 'text-gray-600 hover:text-gray-900'}`}
                 aria-label="Toggle menu"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -92,13 +102,13 @@ export default function Layout({ children }: LayoutProps) {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-dark-800 border-b border-dark-700">
+          <div className={`md:hidden border-b ${isDark ? 'bg-dark-800 border-dark-700' : 'bg-white border-gray-200'}`}>
             <div className="px-4 py-4 space-y-2">
               {navLinks.map(link => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`block px-4 py-2 text-sm font-medium rounded-lg transition-colors ${location.pathname === link.path ? 'bg-dark-700 text-accent-teal' : 'text-gray-400 hover:bg-dark-700 hover:text-white'}`}
+                  className={`block px-4 py-2 text-sm font-medium rounded-lg transition-colors ${location.pathname === link.path ? (isDark ? 'bg-dark-700 text-accent-teal' : 'bg-gray-100 text-accent-teal') : (isDark ? 'text-gray-400 hover:bg-dark-700 hover:text-white' : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900')}`}
                 >
                   {link.label}
                 </Link>
@@ -114,11 +124,11 @@ export default function Layout({ children }: LayoutProps) {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-dark-700 bg-dark-800/50">
+      <footer className={`border-t ${isDark ? 'border-dark-700 bg-dark-800/50' : 'border-gray-200 bg-gray-100/50'}`}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="text-center md:text-left">
-              <p className="text-sm text-gray-400">
+              <p className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
                 © {new Date().getFullYear()} {personalInfo.name}. Built with React + TypeScript + Tailwind CSS.
               </p>
             </div>
@@ -127,7 +137,7 @@ export default function Layout({ children }: LayoutProps) {
                 href="https://github.com/Revenant1902"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-accent-teal transition-colors"
+                className={`transition-colors ${isDark ? 'text-gray-400 hover:text-accent-teal' : 'text-gray-600 hover:text-accent-teal'}`}
                 aria-label="GitHub"
               >
                 <Github size={20} />
@@ -136,14 +146,14 @@ export default function Layout({ children }: LayoutProps) {
                 href="https://linkedin.com/in/abir-islam-nill"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-accent-teal transition-colors"
+                className={`transition-colors ${isDark ? 'text-gray-400 hover:text-accent-teal' : 'text-gray-600 hover:text-accent-teal'}`}
                 aria-label="LinkedIn"
               >
                 <Linkedin size={20} />
               </a>
               <a
                 href="mailto:nillmw02@gmail.com"
-                className="text-gray-400 hover:text-accent-teal transition-colors"
+                className={`transition-colors ${isDark ? 'text-gray-400 hover:text-accent-teal' : 'text-gray-600 hover:text-accent-teal'}`}
                 aria-label="Email"
               >
                 <Mail size={20} />
