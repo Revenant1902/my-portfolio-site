@@ -14,7 +14,7 @@ export default function Home() {
         {/* Background Image with Gradient Overlay */}
         <div className="absolute inset-0 z-0">
           <img
-            src="/images/abir-photo.jpg.jpg"
+            src="/images/abir-photo.jpg"
             alt=""
             className="w-full h-full object-cover object-top opacity-20"
           />

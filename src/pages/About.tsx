@@ -94,7 +94,7 @@ export default function About() {
             <div className="sticky top-24">
               <div className="card p-0 overflow-hidden mb-6">
                 <img
-                  src="/images/abir-photo.jpg.jpg"
+                  src="/images/abir-photo.jpg"
                   alt={personalInfo.name}
                   className="w-full aspect-square object-cover"
                 />
