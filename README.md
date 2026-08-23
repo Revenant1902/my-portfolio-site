@@ -1,22 +1,54 @@
-# Portfolio Site - Abir Islam Nill
+# Abir Islam Nill | Portfolio
 
-A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS.
+**AI Quality Assurance & B2B Sales Professional**
+
+A modern, responsive portfolio website showcasing my work at the intersection of AI evaluation, automation, and client-facing sales.
+
+---
+
+## About This Project
+
+This portfolio serves as a centralized place to explore my professional background, technical projects, and the dual-track career I'm building — combining AI/technical work with real-world B2B sales experience.
+
+Built with a focus on clean design, performance, and maintainability. All content is structured as data files for easy updates as I grow my skill set and complete new projects.
+
+---
 
 ## Tech Stack
 
-- **React 18** - UI library
-- **TypeScript** - Type safety
-- **Vite** - Build tool
-- **Tailwind CSS** - Styling
-- **Lucide React** - Icons
-- **React Router** - Navigation
+| Category | Technologies |
+|----------|-------------|
+| **Frontend** | React 18, TypeScript |
+| **Build Tool** | Vite |
+| **Styling** | Tailwind CSS |
+| **Icons** | Lucide React |
+| **Routing** | React Router DOM |
 
-## Project Structure
+---
+
+## Featured Projects
+
+### [Tally](https://tally-revenant.vercel.app/)
+A focused counter app for tracking daily productivity metrics — calls, appointments, and tasks. Built out of a personal need for a minimal, ad-free tracking tool.
+
+**Tech:** React 19, TypeScript, Vite, Tailwind CSS, schema-versioned localStorage
+
+### [Claude Code + OmniRoute Setup](https://github.com/Revenant1902/claude_omniroute-setup)
+A documented setup guide for running Claude Code through an OmniRoute proxy on Windows. Enables multi-model routing, custom aliasing, and unified key management across AI providers.
+
+**Tech:** Node.js, Git Bash, OmniRoute Proxy, Environment Variables
+
+### [Cybersecurity Learning Log](https://github.com/Revenant1902/cybersec-learning-log)
+Structured public documentation of my Practical Ethical Hacking coursework — networking, Linux, Bash, and Python fundamentals.
+
+---
+
+## Structure
 
 ```
 src/
 ├── components/     # Reusable UI components
-├── data/           # Content data files (easy to update)
+├── data/           # Content data files
 │   ├── content.ts      # Personal info, hero, about content
 │   ├── experience.ts   # Work experience entries
 │   ├── metrics.ts      # Key metrics to display
@@ -24,70 +56,36 @@ src/
 │   └── skills.ts       # Skills by category
 ├── pages/          # Page components
 ├── types/          # TypeScript type definitions
-├── App.tsx         # Main app component
-├── main.tsx        # Entry point
 └── index.css       # Global styles
 ```
 
-## How to Update Content
+---
 
-### Add a New Project
-Edit `src/data/projects.ts`:
-```typescript
-{
-  id: 'new-project',
-  title: 'Project Name',
-  tagline: 'Short description',
-  description: 'Full description...',
-  liveUrl: 'https://...', // optional
-  repoUrl: 'https://github.com/...',
-  techStack: ['React', 'TypeScript'],
-  features: ['Feature 1', 'Feature 2'],
-  highlight: true // optional, for featured projects
-}
-```
-
-### Update Work Experience
-Edit `src/data/experience.ts`:
-```typescript
-{
-  id: 'company-name',
-  company: 'Company Name',
-  role: 'Your Role',
-  type: 'technical' | 'sales',
-  location: 'Remote / City',
-  period: 'Month Year – Month Year',
-  description: ['Bullet point 1', 'Bullet point 2'],
-  skills: ['Skill 1', 'Skill 2'],
-  metrics: ['Key achievement']
-}
-```
-
-### Update Skills
-Edit `src/data/skills.ts` - modify the `skillCategories` array.
-
-### Update Metrics
-Edit `src/data/metrics.ts` - add or modify metric objects.
-
-## Development
+## Local Development
 
 ```bash
+# Clone the repository
+git clone https://github.com/Revenant1902/portfolio-site.git
+
+# Navigate to project directory
+cd portfolio-site
+
 # Install dependencies
 npm install
 
 # Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
 ```
 
-## Deployment
+---
 
-This project is configured for Vercel deployment. Push to your main branch and Vercel will automatically deploy.
+## Connect
+
+- **LinkedIn:** [linkedin.com/in/abir-islam-nill](https://linkedin.com/in/abir-islam-nill)
+- **GitHub:** [github.com/Revenant1902](https://github.com/Revenant1902)
+- **Email:** nillmw02@gmail.com
+
+---
 
 ## License
 
