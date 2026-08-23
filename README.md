@@ -2,6 +2,8 @@
 
 **AI Quality Assurance & B2B Sales Professional**
 
+🔗 **Live Site:** [abirislamnill.vercel.app](https://abirislamnill.vercel.app/)
+
 A modern, responsive portfolio website showcasing my work at the intersection of AI evaluation, automation, and client-facing sales.
 
 ---
@@ -65,7 +67,7 @@ src/
 
 ```bash
 # Clone the repository
-git clone https://github.com/Revenant1902/portfolio-site.git
+git clone https://github.com/Revenant1902/my-portfolio-site.git
 
 # Navigate to project directory
 cd portfolio-site
