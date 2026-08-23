@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a0a;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#171717;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#14b8a6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+
+  <!-- Decorative gradient orbs -->
+  <circle cx="150" cy="150" r="200" fill="url(#accentGrad)" opacity="0.08" filter="url(#glow)"/>
+  <circle cx="1050" cy="480" r="250" fill="url(#accentGrad)" opacity="0.06" filter="url(#glow)"/>
+
+  <!-- Subtle grid pattern -->
+  <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+    <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#333" stroke-width="0.5" opacity="0.3"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)" opacity="0.4"/>
+
+  <!-- Main content area -->
+  <g transform="translate(600, 315)">
+    <!-- Name -->
+    <text x="0" y="-60" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="700" fill="white" letter-spacing="-1">
+      Abir Islam Nill
+    </text>
+
+    <!-- Title with gradient -->
+    <text x="0" y="10" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="500" fill="url(#textGrad)">
+      AI Quality Assurance & B2B Sales Professional
+    </text>
+
+    <!-- Divider line -->
+    <line x1="-120" y1="55" x2="120" y2="55" stroke="url(#accentGrad)" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- Tagline -->
+    <text x="0" y="95" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="18" fill="#a3a3a3">
+      Computer Science Student • BRAC University
+    </text>
+
+    <!-- Tech tags -->
+    <g transform="translate(0, 140)">
+      <rect x="-180" y="-15" width="120" height="36" rx="18" fill="#14b8a6" fill-opacity="0.15" stroke="#14b8a6" stroke-width="1.5"/>
+      <text x="-120" y="4" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#14b8a6">
+        AI QA
+      </text>
+
+      <rect x="60" y="-15" width="140" height="36" rx="18" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1.5"/>
+      <text x="130" y="4" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#3b82f6">
+        Automation
+      </text>
+
+      <rect x="210" y="-15" width="140" height="36" rx="18" fill="#14b8a6" fill-opacity="0.15" stroke="#14b8a6" stroke-width="1.5"/>
+      <text x="280" y="4" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#14b8a6">
+        B2B Sales
+      </text>
+    </g>
+
+    <!-- Website URL -->
+    <text x="0" y="220" text-anchor="middle" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#6b6b6b">
+      abirislamnill.vercel.app
+    </text>
+  </g>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="600" width="1200" height="30" fill="url(#accentGrad)" opacity="0.3"/>
+</svg>
