@@ -40,7 +40,7 @@ export const experiences: Experience[] = [
     company: 'Vortex Infosys',
     role: 'US SMB Financing Specialist',
     type: 'sales',
-    location: 'Remote',
+    location: 'Dhaka, Bangladesh',
     period: 'November 2025 – February 2026',
     description: [
       'Worked directly with US small business owners to identify funding needs and provide financing solutions',

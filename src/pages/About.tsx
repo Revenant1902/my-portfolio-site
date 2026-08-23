@@ -33,17 +33,17 @@ const extracurriculars = [
   {
     role: 'Secretary of HR',
     organization: 'BRAC University Leadership Development Forum',
-    period: '2023 – Present'
+    period: '2023 – 2026'
   },
   {
     role: 'Apprentice, HR',
     organization: 'Robotics Club of BRAC University (ROBU)',
-    period: '2024 – Present'
+    period: '2023 – 2025'
   },
   {
     role: 'Admission Management Coordinator',
     organization: 'BRAC University Admission Office',
-    period: 'Present'
+    period: '2023'
   },
   {
     role: 'Former Organizing Secretary',
@@ -114,7 +114,7 @@ export default function About() {
                   </div>
                   <div>
                     <span className={isDark ? 'text-gray-500' : 'text-gray-500'}>Focus</span>
-                    <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>AI QA, Automation, Cybersecurity</p>
+                    <p className={isDark ? 'text-gray-300' : 'text-gray-700'}>AI QA, Automation & Business Development</p>
                   </div>
                 </div>
               </div>

@@ -8,11 +8,11 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: 'React 19 + TypeScript', level: 'moderate' },
       { name: 'Vite Build Tool', level: 'moderate' },
-      { name: 'Python', level: 'learning' },
+      { name: 'Python', level: 'strong' },
       { name: 'JavaScript/TypeScript', level: 'moderate' },
-      { name: 'Bash Scripting', level: 'learning' },
-      { name: 'Linux Fundamentals', level: 'learning' },
-      { name: 'Networking (OSI, TCP/IP)', level: 'learning' },
+      { name: 'Bash Scripting', level: 'strong' },
+      { name: 'Linux Fundamentals', level: 'moderate' },
+      { name: 'Networking (OSI, TCP/IP)', level: 'moderate' },
       { name: 'Git & GitHub', level: 'moderate' },
       { name: 'OSINT Research', level: 'moderate' }
     ]
@@ -21,11 +21,12 @@ export const skillCategories: SkillCategory[] = [
     category: 'AI & Automation',
     icon: Brain,
     skills: [
-      { name: 'AI Model Evaluation', level: 'moderate' },
-      { name: 'Quality Assurance', level: 'moderate' },
-      { name: 'Claude Code', level: 'moderate' },
+      { name: 'AI Model Evaluation', level: 'strong' },
+      { name: 'Quality Assurance', level: 'strong' },
+      { name: 'Claude Code', level: 'strong' },
       { name: 'ChatGPT/Claude', level: 'strong' },
-      { name: 'n8n Workflow Automation', level: 'learning' },
+      { name: 'n8n Workflow Automation', level: 'moderate' },
+      { name: 'Docker', level: 'moderate' },
       { name: 'GA4 & Google Tag Manager', level: 'learning' }
     ]
   },

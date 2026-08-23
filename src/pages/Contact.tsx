@@ -26,7 +26,7 @@ export default function Contact() {
         <div className="text-center mb-16">
           <h1 className="section-heading">Get In Touch</h1>
           <p className={`text-lg max-w-2xl mx-auto ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-            Currently open to opportunities in AI QA, automation, and B2B sales roles.
+            Always open to opportunities in AI QA, automation, and B2B sales roles.
             Feel free to reach out if you'd like to connect.
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function Contact() {
               </div>
               <div>
                 <div className={`font-medium ${isDark ? 'text-gray-200' : 'text-gray-800'}`}>Availability</div>
-                <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Open to remote opportunities</div>
+                <div className={`text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>Always glad to hear what you're building — and explore where I can contribute</div>
               </div>
             </div>
           </div>

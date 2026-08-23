@@ -147,7 +147,7 @@ function ProjectCard({ project, isDark }: ProjectCardProps) {
           {project.highlight && (
             <div className="mt-4 p-3 rounded-lg bg-gradient-to-r from-accent-teal/10 to-accent-blue/10 border border-accent-teal/20">
               <p className={`text-xs ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-                <span className="text-accent-teal font-medium">Featured Project</span> — Highlights key engineering decisions and real problem-solving.
+                <span className="text-accent-teal font-medium">Selected Work</span> — chosen for its technical depth and practical, real-world application.
               </p>
             </div>
           )}

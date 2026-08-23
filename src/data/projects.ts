@@ -32,21 +32,23 @@ export const projects: Project[] = [
       'Python fundamentals (in progress)',
       'TryHackMe/HTB hands-on practice planned'
     ],
-    highlight: true
+    highlight: false
   },
   {
     id: 'claude-omniroute-setup',
-    title: 'Claude Code + OpenRouter Setup',
-    tagline: 'Technical configuration guide for AI-assisted development',
-    description: 'Hands-on configuration of Claude Code running through OpenRouter on PowerShell — real technical setup involving API key configuration, environment variables, Git integration, and command-line work. Directly matches named tool requirements in job postings.',
+    title: 'Claude Code + OmniRoute Setup',
+    tagline: 'Multi-model routing configuration for AI-assisted development on Windows',
+    description: 'A documented, repeatable setup guide for running Claude Code through an OmniRoute proxy on Windows via Git Bash. Routing Claude Code through OmniRoute unlocks multi-model routing flexibility, custom model aliasing, and unified key management across upstream AI providers — including OpenRouter, Agent Router, Veo AI, OpenCode, and Kiro AI.',
     repoUrl: 'https://github.com/Revenant1902/claude_omniroute-setup',
-    techStack: ['PowerShell', 'OpenRouter API', 'Git', 'Environment Variables'],
+    techStack: ['Node.js', 'Git Bash', 'OmniRoute Proxy', 'Environment Variables', 'VS Code'],
     features: [
-      'API key configuration and management',
-      'Environment variable setup',
-      'Git integration for version control',
-      'Step-by-step troubleshooting documentation'
-    ]
+      'Multi-model routing across upstream providers (OpenRouter, Agent Router, Veo AI, OpenCode, Kiro AI)',
+      'Environment variable configuration in .bashrc — base URL, API keys, and model aliases',
+      'Custom model aliasing (CLAUDE_MODEL) mapped to OmniRoute endpoints',
+      'Terminal troubleshooting matrix — documented issues, root causes, and fixes',
+      'VS Code integrated-terminal standardization to Git Bash for consistent profile loading'
+    ],
+    highlight: true
   }
 ]
 

@@ -79,9 +79,9 @@ export default function Skills() {
           <div className="flex flex-wrap justify-center gap-3">
             {[
               'GoHighLevel', 'Vicidial', 'RingCentral', 'Apollo.io',
-              'ChatGPT', 'Claude', 'Claude Code', 'n8n',
+              'ChatGPT', 'Claude', 'Claude Code', 'n8n', 'Docker',
               'Git', 'GitHub', 'VS Code', 'Vite',
-              'Notion', 'Canva', 'CapCut', 'Google Sheets'
+              'Notion', 'Obsidian', 'Canva', 'Google Sheets'
             ].map((tool) => (
               <span
                 key={tool}
@@ -101,9 +101,10 @@ export default function Skills() {
         <div className="mt-16 text-center">
           <div className={`inline-block p-6 rounded-lg max-w-2xl ${isDark ? 'bg-dark-800 border border-dark-700' : 'bg-white border border-gray-200'}`}>
             <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
-              <span className="text-accent-teal font-medium">Currently Learning:</span> n8n workflow automation,
-              Practical Ethical Hacking (networking fundamentals, Linux, Python), and GA4/Google Tag Manager.
-              Skills marked as "Learning" represent active development areas, not idle interest.
+              <span className="text-accent-teal font-medium">Actively Expanding:</span> GA4 & Google Tag Manager
+              certifications, deeper n8n workflow automation, and Practical Ethical Hacking coursework
+              (Python fundamentals, passive recon). Skills marked as "Learning" represent active development
+              areas, not idle interest.
             </p>
           </div>
         </div>
