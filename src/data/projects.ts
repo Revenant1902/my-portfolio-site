@@ -29,7 +29,7 @@ export const projects: Project[] = [
       'Networking fundamentals (IP/MAC addressing, TCP/UDP, subnetting, OSI model)',
       'Linux fundamentals (file system, users/privileges, common commands)',
       'Bash scripting exercises',
-      'Python fundamentals (in progress)',
+      'Advanced networking & security concepts (in progress)',
       'TryHackMe/HTB hands-on practice planned'
     ],
     highlight: false

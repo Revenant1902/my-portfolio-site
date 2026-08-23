@@ -41,7 +41,7 @@ A documented setup guide for running Claude Code through an OmniRoute proxy on W
 **Tech:** Node.js, Git Bash, OmniRoute Proxy, Environment Variables
 
 ### [Cybersecurity Learning Log](https://github.com/Revenant1902/cybersec-learning-log)
-Structured public documentation of my Practical Ethical Hacking coursework — networking, Linux, Bash, and Python fundamentals.
+Structured public documentation of my Practical Ethical Hacking coursework — networking, Linux, Bash scripting, with advanced security concepts in progress.
 
 ---
 

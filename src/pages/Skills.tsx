@@ -102,8 +102,8 @@ export default function Skills() {
           <div className={`inline-block p-6 rounded-lg max-w-2xl ${isDark ? 'bg-dark-800 border border-dark-700' : 'bg-white border border-gray-200'}`}>
             <p className={`text-sm leading-relaxed ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
               <span className="text-accent-teal font-medium">Actively Expanding:</span> GA4 & Google Tag Manager
-              certifications, deeper n8n workflow automation, and Practical Ethical Hacking coursework
-              (Python fundamentals, passive recon). Skills marked as "Learning" represent active development
+              certifications, deeper n8n workflow automation, and advanced networking & security concepts through
+              ongoing Practical Ethical Hacking coursework. Skills marked as "Learning" represent active development
               areas, not idle interest.
             </p>
           </div>
